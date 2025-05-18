@@ -3,12 +3,12 @@
 ## read files
 
 # locations of the sites
-df_site = DataFrame(CSV.File(joinpath("data", "raw", "csv", "df_site.csv")))
+df_site = DataFrame(CSV.File(joinpath("data", "formatted", "csv", "df_site.csv")))
 
 # interaction details among each node (willows, gallers, enemies)
-df_interact = DataFrame(CSV.File(joinpath("data", "raw", "csv", "df_interact.csv")))
+df_interact = DataFrame(CSV.File(joinpath("data", "formatted", "csv", "df_interact.csv")))
 
-## read metadata
+## consult metadata
 # more metadata can be found in Kopeleke et al. (2017) doi/10.1002/ecy.1832
 metadata = DataFrame(CSV.File(joinpath("data", "raw", "salix_webs_metadata.csv")))
 
@@ -138,6 +138,3 @@ Ns = Ns[links.(Ns) .>= 5]
 # save local networks and spatial information 
 CSV.write(joinpath("data", "processed", "sites_lat.csv"), sites_lat)
 save(joinpath("data", "processed", "local_networks.jld2"), "N", Ns)
-
-
-

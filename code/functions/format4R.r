@@ -10,16 +10,14 @@
 mymkdir <-  . %>% {dir.create(. , showWarnings = FALSE)}
 tonumeric <- . %>% sub(pat = ",", rep = ".") %>% as.numeric
 mysave <- function(obj, file) {
-  saveRDS(obj, paste0("data/raw/rdata/", file, ".rds"))
-  write.csv2(obj, paste0("data/raw/csv/", file, ".csv"))
+  write.csv2(obj, paste0("data/formatted/", file, ".csv"))
 }
 
 ## Creating output folders
-flds <- c("data/raw/rdata", "data/raw/csv") %T>% sapply(mymkdir)
+flds <- "data/formatted" %T>% sapply(mymkdir)
 
 ## Cleaning existing file folders
-file.remove(list.files(path="data/raw/rdata", full.names=T, pattern="*.rds"))
-file.remove(list.files(path="data/raw/csv", full.names=T, pattern="*.csv"))
+file.remove(list.files(path="data/formatted", full.names=T, pattern="*.csv"))
 
 #### Main function
 ######################################

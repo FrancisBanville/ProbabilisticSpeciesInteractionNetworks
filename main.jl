@@ -26,9 +26,6 @@ using StatsPlots
 # Analyzing ecological networks
 using EcologicalNetworks 
 
-# Using R within Julia
-using RCall
-
 ## Load functions
 include(joinpath("code", "functions", "accumulate.jl"))
 include(joinpath("code", "functions", "merge_networks.jl"))
@@ -38,11 +35,11 @@ include(joinpath("code", "functions", "sample_networks.jl"))
 include(joinpath("code", "functions", "spatial_scaling.jl"))
 include(joinpath("code", "functions", "spatiotemporal_model.jl"))
 
+# The R script 00_format_data.r can be executed in R to format raw data
 
-## Load scripts
-# source("01_import_data.r") # run in R
-include(joinpath("code", "02_process_data.jl"))
-include(joinpath("code", "03_build_prob_networks.jl"))
-include(joinpath("code", "04_make_figures.jl"))
+## Load Julia scripts
+include(joinpath("code", "01_process_data.jl"))
+include(joinpath("code", "02_build_prob_networks.jl"))
+include(joinpath("code", "03_make_figures.jl"))
 
 

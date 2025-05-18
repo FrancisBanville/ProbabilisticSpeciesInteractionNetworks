@@ -9,7 +9,7 @@ fonts=font("DejaVu Sans",7)
 ## read network data
 
 # probabilistic networks
-include("03_build_prob_networks.jl")
+include("02_build_prob_networks.jl")
 
 # metaweb
 M = load(joinpath("data", "processed", "metaweb.jld2"))["N"]
