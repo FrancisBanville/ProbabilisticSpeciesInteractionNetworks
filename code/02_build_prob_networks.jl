@@ -8,7 +8,7 @@ M = load(joinpath("data", "processed", "metaweb.jld2"))["N"]
 Ns = load(joinpath("data", "processed", "local_networks.jld2"))["N"]
 
 ## load interactions data to get species names
-df_interact = DataFrame(CSV.File(joinpath("data", "raw", "csv", "df_interact.csv")))
+df_interact = DataFrame(CSV.File(joinpath("data", "formatted", "df_interact.csv")))
 
 # salix species
 salix = unique(df_interact[:, :RSAL])

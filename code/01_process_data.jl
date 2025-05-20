@@ -3,10 +3,10 @@
 ## read files
 
 # locations of the sites
-df_site = DataFrame(CSV.File(joinpath("data", "formatted", "csv", "df_site.csv")))
+df_site = DataFrame(CSV.File(joinpath("data", "formatted", "df_site.csv")))
 
 # interaction details among each node (willows, gallers, enemies)
-df_interact = DataFrame(CSV.File(joinpath("data", "formatted", "csv", "df_interact.csv")))
+df_interact = DataFrame(CSV.File(joinpath("data", "formatted", "df_interact.csv")))
 
 ## consult metadata
 # more metadata can be found in Kopeleke et al. (2017) doi/10.1002/ecy.1832
